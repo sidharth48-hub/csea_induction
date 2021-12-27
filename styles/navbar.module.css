@@ -1,0 +1,130 @@
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 200;
+    display: flex;
+    height: 80px;
+    width: 100%;
+    background-color: #01070cd2;
+    /* backdrop-filter: blur(10px); */
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px 0 30px;
+    flex-wrap: wrap;
+  }
+  .nav::-webkit-scrollbar {
+    display: none;
+    width: 0px;
+  }
+  .logo {
+    color: #fff;
+    font-size: 35px;
+    font-weight: 600;
+  }
+  .nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+  }
+  
+  .nav ul li {
+    padding: 8px 0px;
+  }
+  
+  .nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+  }
+  
+  .nav ul li a:hover {
+    color: #042238;
+    background: #fff;
+    cursor: pointer;
+  }
+  
+  .nav .menu_btn i {
+    color: rgb(223, 223, 223);
+    font-size: 22px;
+    cursor: pointer;
+    display: none;
+  }
+  .click {
+    display: none;
+  }
+  
+  .active {
+    background-color: #dce2e7;
+  }
+  
+  @media (max-width: 800px) {
+    .nav {
+      padding: 0 24px 0 30px;
+    }
+  }
+  @media (max-width: 800px) {
+    .nav .menu_btn i {
+      display: block;
+    }
+    .click:checked ~ .menu_btn i:before {
+      content: "\f00d";
+    }
+  
+    .nav ul {
+      position: absolute;
+      top: 00px;
+      left: -100%;
+      background: rgb(8, 47, 75);
+      height: 100vh;
+      width: 50vw;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      transition: all 0.3s ease;
+      z-index: 200;
+      padding-inline-start: 0;
+      margin-block-start: 0;
+    }
+    .click:checked ~ ul {
+      left: 0;
+    }
+    .nav ul li {
+      margin: auto;
+      max-width: 200px;
+    }
+    .nav ul li a {
+      transform: translateX(100%);
+      color: #000;
+      font-size: 20px;
+      transition: 0.6s
+        cubic-bezier(
+          0.68,
+          -0.55,
+          0.265,
+          1.55
+        );
+    }
+    .click:checked ~ ul li a {
+      margin-left: 0px;
+    }
+    .nav ul li a:hover {
+      background: none;
+      color: #dce2e7;
+      border: 5px solid #042238;
+    }
+  }
+  
+  @media (max-width: 800px) {
+    .nav ul li a {
+      width: 80%;
+    }
+  }
